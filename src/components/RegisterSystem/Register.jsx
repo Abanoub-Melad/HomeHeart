@@ -56,16 +56,9 @@ function Register() {
   
 
 
-    // function handleKeyPress(e) {
-    //     if (e.key === 'Enter') {
-
-    //     }
-    // }
-
     function handleSubmit(e) {
         e.preventDefault();
     }
-    console.log(pwd);
     
     //   function handleLogin() {
     //     auth.Login(user);
@@ -85,7 +78,7 @@ function Register() {
                     >
                         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                             <img className="logoRegister" decoding="async" loading="lazy" alt="logoRegister"
-                                src="../../../public/images/bazaar-black-sm.c758d695.jpg" />
+                                src="./images/bazaar-black-sm.c758d695.jpg" />
                             <h3>Welcome To Bazaar</h3>
                         </Box>
                         <form onSubmit={handleSubmit} >
@@ -100,7 +93,7 @@ function Register() {
                                     inputRef={inputRef}
 
                                     placeholder="name"
-                                    name="Name" id="outlined-error" type="Name"
+                                    name="Name"  type="Name"
                                     value={user}
                                     onChange={(e) => setUser(e.target.value)} />
                             </Box>
@@ -111,7 +104,7 @@ function Register() {
                                 </Typography>
                                 <TextField  required size="small" error id="outlined-basic" variant="outlined"
                                     placeholder=" .....@gmail.com"
-                                    name="email" id="outlined-error" type="email"
+                                    name="email"  type="email"
                                 />
                             </Box>
                             <Box sx={{ display: 'flex', flexDirection: 'column', my: 2 }} >
@@ -120,7 +113,7 @@ function Register() {
                                     Password
                                 </Typography>
                                 <TextField  required error size="small" placeholder="password" id="outlined-basic" variant="outlined"
-                                    name="password" id="outlined-error" type="password"
+                                    name="password"  type="password"
                                     value={pwd}
                                     onChange={(e) => setPwd(e.target.value)} />
                             </Box>
@@ -133,7 +126,7 @@ function Register() {
 
                                 <TextField  required error size="small" placeholder="password" id="outlined-basic"
                                     variant="outlined"
-                                    name="password" id="outlined-error" type="password"
+                                    name="password" type="password"
                                     value={matchInput}
                                     onChange={(e) => setMatchInput(e.target.value)} />
 

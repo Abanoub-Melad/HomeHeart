@@ -83,7 +83,7 @@ function Login() {
                     >
                 <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <img className="logoRegister" decoding="async" loading="lazy" alt="logoRegister"
-                        src="../../../public/images/bazaar-black-sm.c758d695.jpg" />
+                        src="./images/bazaar-black-sm.c758d695.jpg" />
                     <h3>Welcome To Bazaar</h3>
                 </Box>
                 <form  onSubmit={handleSubmit} >
@@ -94,7 +94,7 @@ function Login() {
                         </Typography>
                         <TextField required  inputRef={inputRef}  size="small" error id="outlined-basic" variant="outlined"
                             placeholder=".....@gmail.com"
-                            name="email" id="outlined-error" type="email" 
+                            name="email"  type="email" 
                              />
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', my: 2 }} >
@@ -103,7 +103,7 @@ function Login() {
                             Password
                         </Typography>
                         <TextField required error  size="small" placeholder="password" id="outlined-basic" variant="outlined"
-                            name="password" id="outlined-error" type="password" 
+                            name="password"  type="password" 
                                 value={pwd}
                             onChange={(e) => setPwd(e.target.value)} />
                     </Box>
@@ -114,7 +114,7 @@ function Login() {
                         </Typography>
 
                         <TextField required error  size="small" placeholder="password" id="outlined-basic" variant="outlined"
-                            name="confirm password" id="outlined-error" type="password"
+                            name="confirm password"  type="password"
                              value={confirmPwd} onChange={(e) => setConfirmPwd(e.target.value)}  />
 
                     </Box>

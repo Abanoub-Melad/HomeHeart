@@ -1,6 +1,7 @@
 import { Box, Link, Typography, Button } from "@mui/material";
 import { Container } from "@mui/material";
 import { Stack } from "@mui/material";
+// import aa from "./img"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 // Import Swiper React components
 import { Pagination, Autoplay } from 'swiper/modules';
@@ -20,8 +21,8 @@ function Hero() {
     const theme = useTheme()
     const [t] = useTranslation()
     
-    const mySwiper = [{ Text: t(`mean`), PathPhoto: "./public/images/banner-15.jpg" },
-                      { Text: t(`women`), PathPhoto: "./public/images/banner-25.jpg" },]
+    const mySwiper = [{ Text: t(`mean`), PathPhoto: "./images/banner-15.jpg" },
+                        { Text: t(`women`), PathPhoto: "./images/banner-25.jpg" },]
     return (
         <>
             <Container >
@@ -112,7 +113,7 @@ function Hero() {
                             flexDirection: "column",
                         }}
                     >
-                        <img width={"100%"} src="./public\images\banner-17.jpg" alt="" loading="lazy" decoding="async"/>
+                        <img width={"100%"} src=".\images\banner-17.jpg" alt="" loading="lazy" decoding="async"/>
                         <Stack sx={{ position: "absolute", left: "7%", top: "30%" }}>
                             <Typography
                                 variant="caption"
@@ -158,7 +159,7 @@ function Hero() {
                             flexDirection: "column",
                         }}
                     >
-                        <img width={"100%"} src="./public\images\banner-16.jpg" alt="" loading="lazy" decoding="async"/>
+                        <img width={"100%"} src=".\images\banner-16.jpg" alt="" loading="lazy" decoding="async"/>
                         <Stack sx={{ position: "absolute", left: "7%", top: "30%" }}>
                             <Typography
                                 variant="caption"
