@@ -1,0 +1,13 @@
+@media (max-width: 895px) {
+
+    .noneBorder {
+        border-right: none !important;
+    }
+}
+
+@media (max-width: 1115px) {
+
+    .noneBorder .ss {
+        border-right: none !important;
+    }
+}
