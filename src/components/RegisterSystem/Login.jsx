@@ -95,7 +95,7 @@ function Login() {
                         <TextField required  inputRef={inputRef}  size="small" error id="outlined-basic" variant="outlined"
                             placeholder=".....@gmail.com"
                             name="email"  type="email" 
-                             />
+                                />
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', my: 2 }} >
                         <Typography variant="h6" component="label"
@@ -115,7 +115,7 @@ function Login() {
 
                         <TextField required error  size="small" placeholder="password" id="outlined-basic" variant="outlined"
                             name="confirm password"  type="password"
-                             value={confirmPwd} onChange={(e) => setConfirmPwd(e.target.value)}  />
+                                value={confirmPwd} onChange={(e) => setConfirmPwd(e.target.value)}  />
 
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', my: 2 }} >
@@ -127,7 +127,6 @@ function Login() {
                     sx={{width: '100%', background: "#D23F57"}} 
                     disabled={  checkConfirmPwd ?  false : true} 
                     onClick={() => navigate('/') } >
-                       
                         Login</Button>
                         
                 </form>

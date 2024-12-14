@@ -1,9 +1,11 @@
 import { Suspense, lazy } from "react";
+import { Routes, Route } from 'react-router-dom';
+
 import { ColorModeContext, useMode } from "./Themes/Themes";
 import { CssBaseline,  ThemeProvider } from "@mui/material";
 // import Header2 from "./components/header/Header2";
-import HeaderThree from "./components/header/HeaderThree";
-import HeaderOne from "./components/header/HeaderOne";
+// import HeaderThree from "./components/header/HeaderThree";
+// import HeaderOne from "./components/header/HeaderOne";
 import Hero from "./components/hero/Hero";
 import Main from "./components/main/Main";
 import Footer from "./components/footer/Footer";
@@ -12,17 +14,11 @@ import Spinner from "./components/Loading/Spinner";
 const CartShopping = lazy(() => import( "./components/context/CartShopping"))
 import './index.css'
 import "./i18next"
-// import { CacheProvider } from "@emotion/react";
-// import createCache from '@emotion/cache';
-// import { prefixer } from 'stylis';
-// import rtlPlugin from 'stylis-plugin-rtl';
-// import { createTheme } from '@mui/material/styles'; 
+import WhoWeAre from "./components/pages/WhoWeAre";
+import ContactUs from "./components/pages/ContactUs";
+import Home from "./components/pages/Home";
 const HeaderTwo = lazy(() => import("./components/header/HeaderTwo"))
 
-// const cacheRtl = createCache({
-//   key: 'muirtl',
-//   stylisPlugins: [prefixer, rtlPlugin],
-// });
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -33,11 +29,14 @@ function App() {
         <CssBaseline />
         <Suspense fallback={<Spinner />}>
           <CartShopping>
-            <HeaderOne />
-            <HeaderTwo />
-            <HeaderThree />
-              <Hero />
-              <Main />
+              <HeaderTwo />
+              <Routes>
+                {/* <Route path="/" element={<Hero />} /> */}
+                <Route path="/" element={<Home />} />
+                {/* <Route path="/main" element={<Hero />} /> */}
+                <Route path="/whoWeAre" element={<WhoWeAre />} />
+                <Route path="/contactUs" element={<ContactUs />} />
+              </Routes>
             <Footer />
           </CartShopping> 
         </Suspense>
@@ -49,3 +48,25 @@ function App() {
 }
 
 export default App
+
+
+// return (
+
+//   <ColorModeContext.Provider value={colorMode}>
+//     <ThemeProvider theme={theme}> 
+//       <CssBaseline />
+//       <Suspense fallback={<Spinner />}>
+//         <CartShopping>
+//           {/* <HeaderOne /> */}
+//           <HeaderTwo />
+//           {/* <HeaderThree /> */}
+//             <Hero />
+//             <Main />
+//           <Footer />
+//         </CartShopping> 
+//       </Suspense>
+//     </ThemeProvider>
+//   </ColorModeContext.Provider>
+
+
+// )

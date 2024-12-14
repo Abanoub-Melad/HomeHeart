@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Avatar,
   Container,
   Divider,
   Drawer,
@@ -9,6 +10,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+// import logooo from "..//../"
 import { styled } from "@mui/material/styles";
 
 import AddIcon from "@mui/icons-material/Add";
@@ -29,8 +31,10 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { useGetProductByNameQuery } from "../../Rudex/Product";
 import { useMyStore } from "../context/CartShopping";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import HeaderOne from "./HeaderOne";
+import HeaderThree from "./HeaderThree";
+// import { memo } from 'react'
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
@@ -141,10 +145,11 @@ function HeaderTwo() {
       color={`${theme.palette.mode === "dark" ? "inherit" : "inherit"}`}
     >
       <Container
-        sx={{ display: "flex", justifyContent: "space-between", py: 2 }}
+        // sx={{ display: "flex", justifyContent: "space-between", py: 2 }}
       >
-        <Stack alignItems="center">
-          <svg
+        <Stack direction={'row'} justifyContent={"space-between"} alignItems="center">
+          {/* <svg
+
             className={` logoHeader ${theme.palette.mode === "light" ? "logoHeaderDark" : ""
               }`}
             version="1.0"
@@ -197,12 +202,23 @@ function HeaderTwo() {
                         40 0 11 -29 40 -40 40 -5 0 -16 -7 -24 -16z"
               />
             </g>
-          </svg>
-        </Stack>
+          </svg> */}
+       {
+        theme.palette.mode === "dark" ?(
+          <Link to="/">
+
+         
+           <img className="logoHeader" src='./images/logo.png' alt="logo" loading="lazy" decoding="async"/>  </Link>) :
+           (   <Link to="/"> <img className="logoHeader" src='./images\b770c444-ad28-4879-9405-9d68a5a0c217-removebg-preview.png' alt="logo" loading="lazy" decoding="async"/> </Link>)
+       
+        }
+
         <Search
           Search
           sx={{
             display: "flex",
+            // width: "500px",
+            // height: "100%",
             borderRadius: 22,
             justifyContent: "space-between",
             "&:focus": {
@@ -233,7 +249,7 @@ function HeaderTwo() {
               inputProps={{ "aria-label": "search" }}
             />
           </Box>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}    >
+          {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}    >
 
             <List
               component="nav"
@@ -280,10 +296,11 @@ function HeaderTwo() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Search>
+        {/* </Stack> */}
 
-        <Stack direction={"row"} alignItems={"center"}>
+        {/* <Stack direction={"row"} alignItems={"center"}>
           <IconButton
 
             // onClick={() => handleClickOpen()}
@@ -334,7 +351,7 @@ function HeaderTwo() {
               </Box>
               <Divider />
               {/* start Your shopping bag is empty. */}
-              <Box>
+              {/* <Box>
                 {!data ? (
                   <Box sx={{ display: "flex" }}>
                     <Box
@@ -497,11 +514,19 @@ function HeaderTwo() {
               </Box>
             </Box>
             {/* end Your shopping bag is empty. */}
-          </Drawer>
-        </Stack>
+          {/* </Drawer> */} 
+        {/* // </Stack> */} 
+        {/* <Box> */}
+
+        {/* </Box> */}
+      <HeaderOne/>
+       </Stack> 
       </Container>
+      <HeaderThree/>
+
     </AppBar>
   );
 }
 
+// export default memo(HeaderTwo);
 export default HeaderTwo;

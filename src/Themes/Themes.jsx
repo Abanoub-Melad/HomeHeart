@@ -27,7 +27,7 @@ export const getDesignTokens = (mode, direction) => ({
                 },
             }
             : {
-                textTypography: { textColor: "yellow" },
+                // textTypography: { textColor: "yellow" },
                 bg: {
                     main: "#12021",
                 },

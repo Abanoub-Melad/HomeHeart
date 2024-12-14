@@ -33,6 +33,22 @@ function Main() {
     var { valueSearch, searchProduct, setRenderCards, renderCards } = useMyStore();
     // const { data, error, isLoading } = useGetProductByNameQuery(`products/${category}/${optionCategory}`)
 
+    const API = 'http://localhost:6002/products'
+
+    useEffect(() => {
+        async function mongo() {
+            try {
+                const res = await fetch(`${API}` )
+                const req = await res.json();
+                console.log("ssssssssssssssssss", req.product)
+
+            } catch (error) {
+                console.log(error);
+                console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            }
+        }
+        mongo()
+    }, [])
 
     useEffect(() => {
         async function getProductByName() {

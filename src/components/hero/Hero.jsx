@@ -1,31 +1,34 @@
-import { Box, Link, Typography, Button } from "@mui/material";
-import { Container } from "@mui/material";
-import { Stack } from "@mui/material";
+// import { Box, Link, Typography, Button } from "@mui/material";
+// import { Container } from "@mui/material";
+// import { Stack } from "@mui/material";
 // import aa from "./img"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+// import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 // Import Swiper React components
-import { Pagination, Autoplay } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
+// import { Pagination, Autoplay } from 'swiper/modules';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import Card from '../main/Card'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './swiper.css';
-import { useTheme } from "@emotion/react";
-import IconSec from "./iconSection/IconSec";
-import { useTranslation } from "react-i18next";
+import CardProduct from '../main/Card';
+// import { useTheme } from "@emotion/react";
+// import IconSec from "./iconSection/IconSec";
+// import { useTranslation } from "react-i18next";
 
 
 function Hero() {
-    const theme = useTheme()
-    const [t] = useTranslation()
+    // const theme = useTheme()
+    // const [t] = useTranslation()
     
-    const mySwiper = [{ Text: t(`mean`), PathPhoto: "./images/banner-15.jpg" },
-                        { Text: t(`women`), PathPhoto: "./images/banner-25.jpg" },]
+    // const mySwiper = [{ Text: t(`mean`), PathPhoto: "./images/banner-15.jpg" },
+    //                     { Text: t(`women`), PathPhoto: "./images/banner-25.jpg" },]
     return (
         <>
-            <Container >
+        {/* <Card/> */}
+        <CardProduct/>
+            {/* <Container >
                     <Box   sx={{
                 display: "flex",
                 alignItems: "center",
@@ -205,7 +208,7 @@ function Hero() {
                 </Box>
 
             <IconSec />
-            </Container >
+            </Container > */}
 
         </>
     );

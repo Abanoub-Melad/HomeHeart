@@ -30,7 +30,7 @@ function Links({ title }) {
                         <List>
                             <ListItem disablePadding>
                                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="Dashboard" />
+                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="Luigi Bormioli" />
                                 </ListItemButton>
                             </ListItem>
                             <ListItem disablePadding sx={{
@@ -38,10 +38,10 @@ function Links({ title }) {
                                 ":hover .sub-link": { display: "block" },
                             }}>
 
-                                <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
+                                {/* <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
                                     <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="products" />
                                     <ArrowForwardIosIcon sx={{ flexGrow: "0", fontSize: "14px" }} />
-                                </ListItemButton>
+                                </ListItemButton> */}
 
                                 <Box
                                     className="sub-link "
@@ -56,12 +56,7 @@ function Links({ title }) {
                                             <List>
                                                 <ListItem disablePadding>
                                                     <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                                        <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="Add product" />
-                                                    </ListItemButton>
-                                                </ListItem>
-                                                <ListItem disablePadding>
-                                                    <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                                        <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="Edit product" />
+                                                        <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="Luigi Bormioli" />
                                                     </ListItemButton>
                                                 </ListItem>
 
@@ -74,13 +69,13 @@ function Links({ title }) {
 
                             <ListItem disablePadding>
                                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="orders" />
+                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="La Tavola" />
                                 </ListItemButton>
                             </ListItem>
 
                             <ListItem disablePadding>
                                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="Profile" />
+                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="LAVA" />
                                 </ListItemButton>
                             </ListItem>
 

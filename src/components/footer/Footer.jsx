@@ -1,23 +1,30 @@
 import { useTheme } from "@emotion/react";
-import { Box, Grid, IconButton, Link, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Box, Grid, Link, List, ListItem, ListItemText, Typography } from "@mui/material";
 function Footer() {
     const theme = useTheme()
     return (
         <>
             <Box
                 sx={{
+                    ".css-196h37h": { bgColor: "#000" },
+                    background: "#000",
+                }}
+            >
+                {/* <Box
+                sx={{
                     ".css-196h37h": { bgColor: "#283445" },
                     background: "#283445",
                 }}
-            >
+            > */}
                 <Grid container
                     p={3}
-                    display='flex' alignItems="flex-start"
-                    justifyContent='space-between'>
-                    <Grid item xs={12} sm={6} lg={4}
-                        sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 1 }}
+                    display='flex' alignItems='flex-start'
+                    justifyContent='space-between' alignItems='center'>
+                    <Grid item xs={12} sm={6} lg={3}
+                    
+                        sx={{ display: 'flex',  flexDirection: 'column', gap: 2, p: 1 }}
                     >
-                        <Box  >
+                        {/* <Box  >
                             <svg
                                 className="logo"
                                 version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -57,14 +64,19 @@ function Footer() {
 
                                 </g>
                             </svg>
-                        </Box>
+                        </Box> */}
+                        {/* <Box > */}
 
-                        <Typography color="text.primary" fontSize={'14px'} sx={{ color: "#ccc" }} >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                            libero id et, in gravida. Sit diam duis mauris nulla cursus. Erat
-                            et lectus vel ut sollicitudin elit at amet.
+                        <Typography 
+                        color="text.primary" fontSize={'14px'} sx={{ 
+                            
+                            color: "#ccc" }} >
+                            Copyright © 2022 Home & Heart.
+                            All rights reserved.
+                            Customer First, Service Foremost
                         </Typography>
-                        <Box sx={{
+                        {/* </Box> */}
+                        {/* <Box sx={{
                             display: 'flex', alignItems: 'center',
                             gap: 2,
                         }}>
@@ -109,7 +121,7 @@ function Footer() {
                                     </Typography>
                                 </Box>
                             </Box>
-                        </Box>
+                        </Box> */}
 
 
                     </Grid>
@@ -118,13 +130,10 @@ function Footer() {
                         sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 2 }}
                     >
                         <Box     >
-                            {/* <Typography variant="h6" marginBottom fontSize={'14px'} fontWeight={700} >
-                        
-                        </Typography> */}
                             <nav aria-label="main mailbox folders">
                                 <ListItem disablePadding    >
                                     <Link href='#' underline="hover">
-                                        <ListItemText primary="About" component={'h1'}
+                                        <ListItemText primary="HORECA" component={'h1'}
                                             sx={{ color: theme.palette.mode === "light" ? "#fff" : "#fff" }}
                                             fontSize={'8px'} />
                                     </Link>
@@ -132,26 +141,26 @@ function Footer() {
                                 <List sx={{ display: 'flex', flexDirection: 'column', gap: .5 }}>
 
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Careers" fontSize={'14px'} sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Glassware" fontSize={'14px'} sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Our Stores" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Chinaware" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Our Cares" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Cast Iron Oven" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Terms & Conditions" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Polycarbonate Melamine-ware & Acrylic Poolware" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Privacy Policy" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Silverware Hollowware Buffetware" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                 </List>
                             </nav>
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6} lg={2}
-                        sx={{ display: 'flex', flexDirection: 'column', gap: 2, p: 1 }}
+                        sx={{ display: 'flex',  flexDirection: 'column', gap: 2, p: 2 }}
                     >
                         <Box    >
                             <nav aria-label="main mailbox folders">
@@ -162,26 +171,39 @@ function Footer() {
                                             // color="text.primary" 
                                             // sx={{color: theme.palette.text.primary}}
                                             sx={{ color: theme.palette.mode === "light" ? "#fff" : "#fff" }}
-                                            primary="Customer Care" />
+                                            primary="Recent Posts" />
                                     </Link>
                                 </ListItem>
                                 <List sx={{ display: 'flex', flexDirection: 'column', gap: .5 }}>
 
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Help Center" fontSize='small'
+                                        <ListItemText primary="Riedel
+" fontSize='small'
                                             sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Track Your Order" fontSize='small'
+                                        <ListItemText primary="Riedel
+" fontSize='small'
                                             sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Corporate & Bulk Purchasing" fontSize='small'
+                                        <ListItemText primary="Riedel
+" fontSize='small'
+                                            sx={{ color: "#ccc" }} />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemText primary="3D Glassware
+" fontSize='small'
+                                            sx={{ color: "#ccc" }} />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemText primary="Lava
+" fontSize='small'
                                             sx={{ color: "#ccc" }} />
                                     </ListItem>
 
                                     <ListItem disablePadding fontSize='small'>
-                                        <ListItemText primary="Returns & Refunds"
+                                        <ListItemText primary="Minhlong"
                                             sx={{ color: "#ccc" }} />
                                     </ListItem>
                                 </List>
@@ -203,22 +225,33 @@ function Footer() {
                                 </ListItem>
                                 <List sx={{ display: 'flex', flexDirection: 'column', gap: .5 }}>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="70 Washington Square South, New York, NY 10012, United States" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="14 El Zohour St., Hedico Bldgs, Off Salah Salem st.
+" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Email: uilib.help@gmail.com" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Heliopolis, Cairo, Egypt.
+
+" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Phone: +1 1123 456 780" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Email: info@homeandheart.com.eg
+" sx={{ color: "#ccc" }} />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemText primary="Phone: +202-22684192/4" sx={{ color: "#ccc" }} />
                                     </ListItem>
 
                                     <ListItem disablePadding>
-                                        <ListItemText primary="Returns & Refunds" sx={{ color: "#ccc" }} />
+                                        <ListItemText primary="Mobil +20129200909/ +201282333880" sx={{ color: "#ccc" }} />
+                                    </ListItem>
+                                    <ListItem disablePadding>
+                                        <ListItemText primary="Fax: +202-22684196
+" sx={{ color: "#ccc" }} />
                                     </ListItem>
                                 </List>
                             </nav>
                         </Box>
-                        <Box>
+                        {/* <Box>
                             <Box >
                                 <Link href="#">
                                     <IconButton color="primary" aria-label="add to shopping cart">
@@ -251,7 +284,7 @@ function Footer() {
                                     </IconButton>
                                 </Link>
                             </Box>
-                        </Box>
+                        </Box> */}
 
                     </Grid>
                 </Grid>
@@ -261,4 +294,4 @@ function Footer() {
 }
 
 export default Footer;
-
+// fast refresh cant handle anonymous components. add a name to your export

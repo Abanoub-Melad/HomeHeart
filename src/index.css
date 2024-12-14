@@ -2,14 +2,24 @@
 
 html {
   scroll-behavior: smooth;
+
 }
 
 body {
   /* padding: 0; */
   /* margin: 0; */
-  font-family: "open Sans  ", sans-serif;
-}
+  /* font-family: "open Sans  ", sans-serif; */
+  /* font-family: "Times New Roman  "; */
 
+}
+h1, h2, h3, h4, h5, h6 {
+  /* font-family: "courier new", monospace; */
+
+}
+a{
+  text-decoration: none;
+  color: inherit !important;;
+}
 .scrollHeader{
   position: fixed;
   top: 0;
@@ -110,10 +120,20 @@ body {
 /* end card shopping */
 
 .logoHeader{
-  fill: #fff;
-  width:  85px;
+  /* background: red; */
+  width:  130px;
   height: auto;
-  margin-top: 6px;
+  /* margin-top: 6px; */
+  
+}
+@media (max-width: 700px) {
+
+  .logoHeader{
+    width:  100px;
+    height: auto;
+    /* margin-top: 6px; */
+    
+  }
 }
 .logoHeaderDark{
   fill: #283445;
@@ -135,5 +155,7 @@ body {
   width: 25px;
   height:25px;
 }
+.textHeading{
 
+}
 

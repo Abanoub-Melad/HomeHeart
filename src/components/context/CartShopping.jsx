@@ -8,6 +8,7 @@ const CreateStore = createContext({})
 function CartShopping({ children }) {
     const [gitID, setGitID] = useState();
     var { data } = useGetProductByNameQuery(`products`)
+    console.log("Product", data)
     const [idData, setIdData] = useState([]);
     const [renderData, setRenderData] = useState([]);
     var [valueSearch, setValueSearch] = useState('');
@@ -18,10 +19,8 @@ function CartShopping({ children }) {
 
     function searchProduct(e) {
         setValueSearch(e.target.value)
-        // console.log("rrrrrrrrrrrrrrrrrrrrrrrrrr", valueSearch)
         const result = data.filter((one) => one.title.toLowerCase().includes(e.target.value))
         setRenderCards(result)
-        // console.log('wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww', allProducts)
     }
 
     // const clearCart = () => {
@@ -45,9 +44,10 @@ function CartShopping({ children }) {
     useEffect(() => {
         async function getAllProducts() {
             try {
-                const res = await fetch(`https://fakestoreapi.com/products/${gitID}`)
+                const res = await fetch(`https://fakestoreapi.com/products/${gitID}` )
                 const req = await res.json();
                 setIdData(req)
+                console.log("aba",req)
 
             } catch (error) {
                 console.log(error);
@@ -55,6 +55,7 @@ function CartShopping({ children }) {
         }
         getAllProducts()
     }, [gitID])
+
 
 
     // const getItemQuantity = (gitID) => {
