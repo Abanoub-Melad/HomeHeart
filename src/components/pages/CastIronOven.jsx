@@ -4,6 +4,7 @@ import { Grid, Card, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {  motion } from "framer-motion";
 import   imagePizza  from "..//../../public/images/home/pizza.jpg";
+import   imageCast  from "./../../../public/images/Horeca/Cast Iron Comps/lava_new_product_1c.jpg";
 
 function CastIronOven() {
     const theme = useTheme()
@@ -70,7 +71,7 @@ function CastIronOven() {
            
             <Grid item xs={12} sm={6} md={8}>
                 <Card className="card" component={Link} to="/riedel" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="..//..//../public/images\Horeca\Cast Iron Comps\lava_new_product_1c.jpg" alt="Riedel" />
+                    <CardMedia height={'300px'} component="img" image={`${imageCast}`} alt="Riedel" />
                     {/* <CardMedia height={'300px'} component="img" image="./public\images\Horeca\Cast Iron Comps\lava_new_product_1c.jpg" alt="Riedel" /> */}
                     <Box className="card-box" >
                         <Typography variant="body2">Glassware</Typography>

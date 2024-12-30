@@ -3,6 +3,7 @@ import { Box, useMediaQuery, useTheme } from "@mui/system"
 import { Grid, Card, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {  motion } from "framer-motion";
+import  imgeChina from "./../../../public/images/home/Kulsan_Home-and-Heart_catering-900x600.jpg";
 
 function Chinaware() {
     const theme = useTheme()
@@ -19,7 +20,8 @@ function Chinaware() {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                backgroundImage: `url(/public/images/home/Kulsan_Home-and-Heart_catering-900x600.jpg)`,
+                backgroundImage: `url(${imgeChina})`,
+                // backgroundImage: `url(/public/images/home/Kulsan_Home-and-Heart_catering-900x600.jpg)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 zIndex: 1,
