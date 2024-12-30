@@ -2,7 +2,7 @@
 // import Menu from "@mui/material/Menu";
 // import MenuItem from "@mui/material/MenuItem";
 import { useState } from "react";
-import { Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, Typography, useMediaQuery } from "@mui/material";
+import { Box, Container, Drawer, IconButton, List, ListItem, ListItemButton, Skeleton, Typography, useMediaQuery } from "@mui/material";
 // import WindowIcon from "@mui/icons-material/Window";
 import MenuIcon from "@mui/icons-material/Menu";
 // import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -24,6 +24,7 @@ import { Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
+import LinksHoreca from "./LinksHoreca";
 function HeaderThree() {
   const [state, setState] = useState({ top: false });
   const [anchorEl, setAnchorEl] = useState(null);
@@ -50,6 +51,7 @@ function HeaderThree() {
 
   return (
     <Container
+      // className="headeraaaaa"
       sx={{
         display: "flex",
         alignItems: "center",
@@ -57,6 +59,9 @@ function HeaderThree() {
         // pb: 1,
         // pt: 1,
         py: 1,
+        // opacity: 0.5,
+        //  backgroundColor: theme.palette.mode === "light" ? "#ccc" : "#fff" 
+        // backgroundColor: #cccccc,
       }}
     >
 
@@ -77,13 +82,13 @@ function HeaderThree() {
               title={t(`Whaao we are`)} >Who we are</Link>
           </Typography>
           <Links title={t(`Partners`)} />
-          <Links title={t(`HORECA`)} />
-          <Link >Retail</Link>
+          <LinksHoreca title={t(`HORECA`)} />
+          <Link to='/Retail' >Retail</Link>
           <Link to='contactUs'>Contact us</Link>
         </Stack>)}
 
       {useMediaQuery('(max-width:1200px)')
-        && (<IconButton onClick={toggleDrawer("top", true)}>
+        && (<IconButton onClick={toggleDrawer("left", true)}>
           <MenuIcon />
         </IconButton>)}
       <Drawer
@@ -91,56 +96,140 @@ function HeaderThree() {
           ".MuiPaper-root.css-1sozasi-MuiPaper-root-MuiDrawer-paper":
             { height: "100%" }
         }}
-        anchor={"top"}
-        open={state["top"]}
-        onClose={toggleDrawer("top", false)}
+        anchor={"left"}
+        open={state["left"]}
+        onClose={toggleDrawer("left", false)}
       >
 
         <Box
           sx={{
-            width: { xs: "350px", md: "750px" }, mx: "auto", position: "relative", mt: 6, pt: 10,
+            padding: "15px",
+            width: { xs: "380px", md: "750px" }, mx: "auto", position: "relative", mt: 5, pt: 5,
           }}>
           <IconButton
             sx={{
-              position: "absolute", top: "0", right: "2%",
+              position: "absolute", left: "90", right: "6%", top: "0",
               ":hover": { rotate: "360deg", scale: "1.09", transition: ".3s", color: "red" }
             }}
-            onClick={toggleDrawer("top", false)}>
+            onClick={toggleDrawer("left", false)}>
             <Close />
           </IconButton>
-          {[
-            { mainLink: t`Who we are`, subLink: [t`Link`, t`Link`, t`Link`] },
-            { mainLink: t`MegaMenu`, subLink: [t`Link`, t`Link`, t`Link`] },
-            { mainLink: t`FullScreen`, subLink: [t`Link`, t`Link`, t`Link`] },
-            { mainLink: t`pages`, subLink: [t`Link`, t`Link`, t`Link`] },
-            { mainLink: t`UserAccount`, subLink: [t`Link`, t`Link`, t`Link`] },
-            {
-              mainLink: t`VendorAccount`, subLink: [t`Link`, t`Link`, t`Link`]
+    
+          <ListItem  sx={{p: 0}} component={Link}  to="whoWeAre">
+                          <ListItemButton >
+                            <ListItemText primary={"Who we are"} />
+                          </ListItemButton>
+                        </ListItem>
+                  
+                <Accordion elevation={0} sx={{
+                  bgcolor: "initial", 
+                }} 
+                >
+                  {/* <Skeleton height={100} /> */}
 
-            },].map((one) => {
-              return (
-                <Accordion elevation={0} sx={{ bgcolor: "initial" }} key={one}>
+                    
                   <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
                     id="panel1-header"
                   >
-                    {one.mainLink}
+                   Partners
                   </AccordionSummary>
                   <List sx={{ py: 0, px: 0 }}>
-                    {one.subLink.map((Link) => {
-                      return (
-                        <ListItem key={Link}>
+                        <ListItem component={Link}  to="Luigi-Bormioli">
                           <ListItemButton>
-                            <ListItemText primary={Link} />
+                            <ListItemText primary={"Luigi Bormioli"} />
                           </ListItemButton>
                         </ListItem>
-                      )
-                    })}
+                        <ListItem   component={Link} to="/La-Tavola">
+
+                          <ListItemButton>
+                            <ListItemText primary={"La Tavola"} />
+                          </ListItemButton>
+                        </ListItem>
+                        <ListItem   component={Link} to="/Lava">
+
+                            <ListItemButton>
+                              <ListItemText primary={"LAVA"} />
+                            </ListItemButton>
+                          </ListItem>
+                         
+
+                
+                        
                   </List>
                 </Accordion>
-              )
-            })}
+          
+                <Accordion elevation={0} 
+             
+                sx={{
+                  bgcolor: "initial",
+                  border: "none",
+                  "&::before": {
+                    display: "none",
+                  }
+                }}
+                >
+                  {/* <Skeleton height={100} /> */}
+
+                    
+                  <AccordionSummary
+                  
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                  >
+                   HORECA
+                  </AccordionSummary>
+                  <List sx={{ py: 0, px: 0 }}>
+                        <ListItem component={Link} to="/Glassware">
+                          <ListItemButton>
+                            <ListItemText primary={"Glassware"} />
+                          </ListItemButton>
+                        </ListItem>
+                        <ListItem   component={Link}to="/Chinaware">
+
+                          <ListItemButton>
+                            <ListItemText primary={"Chinaware"} />
+                          </ListItemButton>
+                        </ListItem>
+                        <ListItem   component={Link} to="/CastIronOven">
+
+                            <ListItemButton>
+                              <ListItemText primary={"Cast Iron Oven"} />
+                            </ListItemButton>
+                          </ListItem>
+                        <ListItem   component={Link} to="/Polycarbonate">
+
+                            <ListItemButton>
+                              <ListItemText primary={"Polycarbonate Melamine-ware & Acrylic Poolware"} />
+                            </ListItemButton>
+                          </ListItem>
+                        <ListItem   component={Link} to="/Silverware">
+
+                            <ListItemButton>
+                              <ListItemText primary={"Silverware Hollowware"} />
+                            </ListItemButton>
+                          </ListItem>
+                        <ListItem   component={Link} to="/Buffetware">
+
+                            <ListItemButton>
+                              <ListItemText primary={"Buffetware"} />
+                            </ListItemButton>
+                          </ListItem>
+                         
+
+                
+                        
+                  </List>
+                </Accordion>
+                {/* <List sx={{ py: 0, px: 0, }}> */}
+                        <ListItem  sx={{p: 0}} component={Link}  to="contactUs">
+                          <ListItemButton >
+                            <ListItemText primary={"Contact us"} />
+                          </ListItemButton>
+                        </ListItem>
+                        {/* </List> */}
         </Box>
       </Drawer>
     </Container>
@@ -148,3 +237,24 @@ function HeaderThree() {
 }
 
 export default HeaderThree;
+
+{/* <Accordion elevation={0} sx={{ bgcolor: "initial" }} key={one}>
+<AccordionSummary
+  expandIcon={<ExpandMoreIcon />}
+  aria-controls="panel1-content"
+  id="panel1-header"
+>
+  {one.mainLink}
+</AccordionSummary>
+<List sx={{ py: 0, px: 0 }}>
+  {one.subLink.map((Link) => {
+    return (
+      <ListItem key={Link}>
+        <ListItemButton>
+          <ListItemText primary={Link} />
+        </ListItemButton>
+      </ListItem>
+    )
+  })}
+</List>
+</Accordion> */}

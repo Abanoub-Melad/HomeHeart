@@ -1,6 +1,5 @@
 import { Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import { Stack } from "@mui/material";
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

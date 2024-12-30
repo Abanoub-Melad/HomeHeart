@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 // import logooo from "..//../"
 import { styled } from "@mui/material/styles";
+import { alpha } from '@mui/material/styles';
 
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -26,7 +27,7 @@ import Badge from "@mui/material/Badge";
 import { useEffect, useState } from "react";
 import { Close, ExpandMore } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
-import { Box } from "@mui/system";
+import { Box, useMediaQuery } from "@mui/system";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { useGetProductByNameQuery } from "../../Rudex/Product";
 import { useMyStore } from "../context/CartShopping";
@@ -119,6 +120,7 @@ function HeaderTwo() {
 
   const { data } = useGetProductByNameQuery(`products`);
 
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -137,170 +139,106 @@ function HeaderTwo() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY < lastScrollY) {
+        setVisible(true);
+      } else {
+        setVisible(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   return (
+    // <AppBar
+    //   // elevation={scrolling ? 2 : 0}
+    //   elevation={scrolling ? 2 : 0}
+    //   // position="sticky"
+    //   position="fixed"
+    //   // className="navbar-collapse"
+    //    sx={{ 
+
+    //     // backgroundColor: alpha(theme.palette.common.white, 0.15)
+    //     backgroundColor: "inherit",
+
+    //     }}
+    // >
     <AppBar
-      elevation={scrolling ? 2 : 0}
-      position="sticky"
-      color={`${theme.palette.mode === "dark" ? "inherit" : "inherit"}`}
+      elevation={0}
+      position="fixed"
+      sx={{
+        transition: 'transform 0.3s ease-in-out',
+        transform: visible ? 'translateY(0)' : 'translateY(-100%)',
+        backgroundColor: "inherit",
+      }}
     >
       <Container
-        // sx={{ display: "flex", justifyContent: "space-between", py: 2 }}
+      // sx={{ display: "flex", justifyContent: "space-between", py: 2 }}
       >
         <Stack direction={'row'} justifyContent={"space-between"} alignItems="center">
-          {/* <svg
 
-            className={` logoHeader ${theme.palette.mode === "light" ? "logoHeaderDark" : ""
-              }`}
-            version="1.0"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 159.000000 76.000000"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <g
-              transform="translate(0.000000,76.000000) scale(0.100000,-0.100000)"
-              stroke="none"
-            >
-              <path
-                d="M265 695 c-194 -103 -215 -134 -215 -312 0 -158 21 -194 161 -274
-                        105 -60 143 -71 201 -58 53 12 223 112 244 144 15 22 17 23 49 9 27 -11 101
-                        -14 362 -14 195 0 343 4 365 10 49 14 94 53 119 103 17 32 20 54 17 102 -4 72
-                        -30 117 -86 156 l-36 24 -360 3 c-259 2 -368 -1 -389 -9 -25 -11 -31 -9 -55
-                        14 -33 31 -164 109 -211 125 -56 20 -96 14 -166 -23z m241 -46 c51 -28 103
-                        -62 115 -75 l22 -23 -26 -31 c-28 -33 -47 -87 -47 -135 0 -36 31 -106 58 -133
-                        18 -18 19 -22 6 -41 -15 -21 -154 -107 -212 -130 -47 -19 -92 -8 -185 45 -148
-                        84 -157 99 -157 259 0 170 11 186 194 284 85 45 119 42 232 -20z m424 -229
-                        c15 -15 20 -33 20 -69 l0 -48 -47 -1 c-81 -2 -121 62 -71 115 27 29 71 30 98
-                        3z m160 7 c0 -7 -16 -29 -36 -48 l-35 -34 38 -5 c25 -3 38 -10 38 -20 0 -11
-                        -15 -16 -59 -18 -80 -4 -89 8 -43 56 20 21 37 41 37 45 0 4 -16 7 -35 7 -24 0
-                        -35 5 -35 15 0 12 14 15 65 15 47 0 65 -4 65 -13z m138 -7 c17 -16 22 -32 22
-                        -69 l0 -48 -47 -1 c-81 -2 -121 62 -71 115 27 28 67 30 96 3z m150 0 c17 -16
-                        22 -32 22 -69 l0 -48 -47 -1 c-81 -2 -121 62 -71 115 27 28 67 30 96 3z m122
-                        5 c0 -8 -5 -15 -12 -15 -26 0 -48 -34 -48 -72 0 -55 -24 -45 -28 11 -3 34 2
-                        49 19 67 25 27 69 33 69 9z"
-              />
-              <path
-                d="M256 494 c-10 -14 -16 -37 -14 -52 l3 -27 105 -1 c58 -1 110 -3 115
-                        -4 19 -6 45 12 45 32 0 11 -8 33 -17 49 -17 29 -17 29 -119 29 -98 0 -102 -1
-                        -118 -26z"
-              />
-              <path
-                d="M260 330 c0 -74 9 -80 119 -80 99 0 111 9 111 86 0 41 -4 54 -15 54
-                        -10 0 -15 -11 -15 -35 l0 -35 -85 0 -85 0 0 35 c0 24 -5 35 -15 35 -12 0 -15
-                        -13 -15 -60z"
-              />
-              <path
-                d="M856 394 c-9 -8 -16 -19 -16 -24 0 -11 29 -40 40 -40 11 0 40 29 40
-                        40 0 11 -29 40 -40 40 -5 0 -16 -7 -24 -16z"
-              />
-              <path
-                d="M1156 394 c-9 -8 -16 -19 -16 -24 0 -11 29 -40 40 -40 11 0 40 29 40
-                        40 0 11 -29 40 -40 40 -5 0 -16 -7 -24 -16z"
-              />
-              <path
-                d="M1306 394 c-9 -8 -16 -19 -16 -24 0 -11 29 -40 40 -40 11 0 40 29 40
-                        40 0 11 -29 40 -40 40 -5 0 -16 -7 -24 -16z"
-              />
-            </g>
-          </svg> */}
-       {
-        theme.palette.mode === "dark" ?(
-          <Link to="/">
+          {
+            theme.palette.mode === "dark" ? (
+              <Link to="/">
 
-         
-           <img className="logoHeader" src='./images/logo.png' alt="logo" loading="lazy" decoding="async"/>  </Link>) :
-           (   <Link to="/"> <img className="logoHeader" src='./images\b770c444-ad28-4879-9405-9d68a5a0c217-removebg-preview.png' alt="logo" loading="lazy" decoding="async"/> </Link>)
-       
-        }
 
-        <Search
-          Search
-          sx={{
-            display: "flex",
-            // width: "500px",
-            // height: "100%",
-            borderRadius: 22,
-            justifyContent: "space-between",
-            "&:focus": {
-              border: "none",
-            },
-          }}
-        >
-          <Box
+                <img className="logoHeader" src='./images/logo.png' alt="logo" loading="lazy" decoding="async" />  </Link>) :
+              (<Link to="/"> <img className="logoHeader" src='./images\b770c444-ad28-4879-9405-9d68a5a0c217-removebg-preview.png' alt="logo" loading="lazy" decoding="async" /> </Link>)
+
+          }
+
+          <Search
+            Search
             sx={{
-              display: "flex",
+              display: isMobile ? 'none' : 'flex',
+
+              // display: "flex",
+              // width: "500px",
+              // height: "100%",
               borderRadius: 22,
               justifyContent: "space-between",
-              borderColor: "red",
+              "&:focus": {
+                border: "none",
+              },
             }}
           >
-            {(i18n.language === 'en') &&
-
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-            }
-
-            <StyledInputBase
-              sx={{ px: 1 }}
-              value={valueSearch}
-              onChange={(e) => searchProduct(e)}
-              placeholder={t(`searchInput`)}
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Box>
-          {/* <Box sx={{ display: { xs: 'none', sm: 'block' } }}    >
-
-            <List
-              component="nav"
-              aria-label="Device settings"
+            <Box
               sx={{
-                bgcolor: theme.palette.myColor.main,
+                display: "flex",
                 borderRadius: 22,
-                p: "0px",
+                justifyContent: "space-between",
+                borderColor: "red",
               }}
             >
-              <ListItem
-                id="lock-button"
-                aria-haspopup="listbox"
-                aria-controls="lock-menu"
-                aria-label="when device is locked"
-                aria-expanded={open ? "true" : undefined}
-                onClick={handleClickListItem}
-              >
-                <ListItemText
-                  sx={{ width: 90, textAlign: "center", cursor: "pointer" }}
-                  secondary={options[selectedIndex]}
-                />
-                <ExpandMore sx={{ fontSize: "16px" }} />
-              </ListItem>
-            </List>
-            <Menu
-              id="lock-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                "aria-labelledby": "lock-button",
-                role: "listbox",
-              }}
-            >
-              {options.map((option, index) => (
-                <MenuItem
-                  sx={{ fontSize: "13px" }}
-                  key={option}
-                  selected={index === selectedIndex}
-                  onClick={(event) => handleMenuItemClick(event, index)}
-                >
-                  {option}
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
-        </Search>
-        {/* </Stack> */}
+              {(i18n.language === 'en') &&
 
-        {/* <Stack direction={"row"} alignItems={"center"}>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+              }
+
+              <StyledInputBase
+                sx={{ px: 1 }}
+                value={valueSearch}
+                onChange={(e) => searchProduct(e)}
+                placeholder={t(`searchInput`)}
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Box>
+          </Search>
+          {/* </Stack> */}
+
+          {/* <Stack direction={"row"} alignItems={"center"}>
           <IconButton
 
             // onClick={() => handleClickOpen()}
@@ -351,7 +289,7 @@ function HeaderTwo() {
               </Box>
               <Divider />
               {/* start Your shopping bag is empty. */}
-              {/* <Box>
+          {/* <Box>
                 {!data ? (
                   <Box sx={{ display: "flex" }}>
                     <Box
@@ -514,15 +452,15 @@ function HeaderTwo() {
               </Box>
             </Box>
             {/* end Your shopping bag is empty. */}
-          {/* </Drawer> */} 
-        {/* // </Stack> */} 
-        {/* <Box> */}
+          {/* </Drawer> */}
+          {/* // </Stack> */}
+          {/* <Box> */}
 
-        {/* </Box> */}
-      <HeaderOne/>
-       </Stack> 
+          {/* </Box> */}
+          <HeaderOne />
+        </Stack>
       </Container>
-      <HeaderThree/>
+      <HeaderThree />
 
     </AppBar>
   );

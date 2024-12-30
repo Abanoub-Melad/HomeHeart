@@ -1,64 +1,86 @@
-import { useTheme } from "@emotion/react";
 import { Grid, Typography } from "@mui/material"
 import { Box, Stack } from "@mui/system"
 import { Link } from "react-router-dom";
 
 function ContactUs() {
-  const theme = useTheme()
 
 
   return (
     <>
-      <Stack>
-        <Box
-          sx={{
-            position: "relative",
-            width: "100%",
-            height: "100vh",
-            overflow: "hidden",
-          }}
-        >
-          <Box sx={{
-            position: "absolute",
-            zIndex: 2,
 
-          }}>
-            <img width={'100%'}  src="\images\Bento-server-2820.jpg" />
-          </Box>
-        </Box>
-        {/* <Box sx={{
-          position: "absolute",
-          zIndex: 2,
-        }}> */}
-        <Box
-                  sx={{
-                    position: "absolute",
-                    zIndex: 2,
-                    [theme.breakpoints.up("sm")]: {
-                      left: 60,
-                      top: 190,
-                      maxWidth: "44%",
-                      textAlign: "start",
-                    },
-                    [theme.breakpoints.down("sm")]: {
-                      py: 5,
-                    },
-                  }}
-                >
-          <Typography
-            sx={{ fontFamily: 'c', fontSize: '25px' , color: '#fff'}}>
-            Wanna chat?
-          </Typography>
-          <Typography
-            sx={{ fontFamily: 'c', fontWeight: 'bold', fontSize: '40px' , color: '#fff'}}>
-            Send us your feedback
-          </Typography>
-          <Typography
-            sx={{ fontFamily: 'c', fontWeight: 'bold', fontSize: '40px' , color: '#fff' }}>
-            We love hearing it!
-          </Typography>
-        </Box>
-      </Stack>
+<Stack>
+  <Box
+    sx={{
+      position: "relative",
+      width: "100%",
+      height: "100vh",
+      overflow: "hidden",
+    }}
+  >
+    <Box
+      sx={{
+        position: "absolute",
+        zIndex: 1,  // تخفيض Z-index ليظهر المحتوى فوق الصورة
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+      }}
+    >
+      <Box sx={{ height: { xs: '690px', sm: '100vh' } }}>
+        <img
+          src="/images/Bento-server-2820.jpg"
+          alt="Bento Server"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </Box>
+    </Box>
+
+    <Box
+      sx={{
+        position: "absolute",
+        zIndex: 2,
+        top: { xs: '100px', sm: '190px' },  // تعديل الموقع بناءً على حجم الشاشة
+        left: { xs: 0, sm: 100 },
+        width: { xs: '100%', sm: '44%' },  // تغيير العرض بين الشاشات الصغيرة والكبيرة
+        textAlign: 'start',  // محاذاة النص
+        px: { xs: 2, sm: 0 },  // المسافات الداخلية
+        py: { xs: 5, sm: 0 },
+      }}
+    >
+      <Typography
+        sx={{
+          fontFamily: 'c',
+          fontSize: { xs: '20px', sm: '25px' },
+          color: '#fff'
+        }}
+      >
+        Wanna chat?
+      </Typography>
+      <Typography
+        sx={{
+          fontFamily: 'c',
+          fontWeight: 'bold',
+          fontSize: { xs: '30px', sm: '40px' },
+          color: '#fff'
+        }}
+      >
+        Send us your feedback
+      </Typography>
+      <Typography
+        sx={{
+          fontFamily: 'c',
+          fontWeight: 'bold',
+          fontSize: { xs: '30px', sm: '40px' },
+          color: '#fff'
+        }}
+      >
+        We love hearing it!
+      </Typography>
+    </Box>
+  </Box>
+</Stack>
+
       <Grid
         sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 3 ,py:3}}
         container  >

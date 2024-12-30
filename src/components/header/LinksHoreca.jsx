@@ -1,12 +1,13 @@
-import { ExpandMore } from "@mui/icons-material"
-import { Paper, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from "react-router-dom";
-function Links({ title }) {
+import { ExpandMore } from "@mui/icons-material"
+import { Paper, Typography } from "@mui/material"
+
+function LinksHoreca({ title }) {
     return (
         <Box sx={{
             zIndex: 20,
@@ -28,12 +29,13 @@ function Links({ title }) {
                 >
                     <nav aria-label="secondary mailbox folders">
                         <List>
-                        <ListItem  disablePadding 
-                            component={Link} to="/luigi-bormioli" >
+                            <ListItem disablePadding
+                                component={Link} to="/glassware" >
+
                                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                    <ListItemText 
-                                    sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }}
-                                     primary="Luigi Bormioli" />
+                                    <ListItemText
+                                        sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }}
+                                        primary="Glassware" />
                                 </ListItemButton>
                             </ListItem>
                             <ListItem disablePadding sx={{
@@ -41,12 +43,8 @@ function Links({ title }) {
                                 ":hover .sub-link": { display: "block" },
                             }}>
 
-                                {/* <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                    <ListItemText sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} primary="products" />
-                                    <ArrowForwardIosIcon sx={{ flexGrow: "0", fontSize: "14px" }} />
-                                </ListItemButton> */}
 
-                                <Box
+                                {/* <Box
                                     className="sub-link "
                                     sx={{
                                         display: "none",
@@ -59,42 +57,62 @@ function Links({ title }) {
                                             <List>
                                                 <ListItem disablePadding>
                                                     <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                                        <ListItemText 
-                                                        sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }}
-                                                        
-                                                            primary="Luigi Bormioli" />
+                                                        <ListItemText
+                                                            sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }}
+
+                                                            primary="Chinaware" />
                                                     </ListItemButton>
                                                 </ListItem>
 
                                             </List>
                                         </nav>
                                     </Paper>
-                                </Box>
+                                </Box> */}
                             </ListItem>
                             {/* <Paper sx={{ ml: 0, minWidth: 150 }}> */}
 
 
                             <ListItem disablePadding
-                                                    component={Link} to="/La-Tavola" >
+                                component={Link} to="/Chinaware" >
 
-                            
+
                                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
-                                    <ListItemText 
-                                    sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }} 
-                                    primary="La Tavola" />
+                                    <ListItemText
+ sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }}
+                                        primary="Chinaware" />
+                                </ListItemButton>
+                            </ListItem>
+                            <ListItem disablePadding
+                                component={Link} to="/CastIronOven" >
+
+
+                                <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
+                                    <ListItemText
+                                        sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }}
+                                        primary="Cast Iron 
+" />
                                 </ListItemButton>
                             </ListItem>
                             {/* </Paper> */}
 
-                            <ListItem disablePadding  component={Link} to="/Lava">
+                            <ListItem disablePadding component={Link} to="/Polycarbonate">
                                 <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
                                     <ListItemText
-                                     sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }
-                                     } 
-                                     primary="LAVA" />
+                                        sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }
+                                        }
+                                        primary="Polycarbonate & Melamine 
+" />
                                 </ListItemButton>
                             </ListItem>
-
+                            <ListItem disablePadding component={Link} to="/Silverware">
+                                <ListItemButton sx={{ display: "flex", p: 0, px: 1.5 }}>
+                                    <ListItemText
+                                        sx={{ ".MuiTypography-root": { fontSize: "15px", fontWeight: 300 } }
+                                        }
+                                        primary="Silverware & Buffet Station" />
+                                </ListItemButton>
+                            </ListItem>
+                        
                         </List>
                     </nav>
                 </Paper>
@@ -105,4 +123,4 @@ function Links({ title }) {
     )
 }
 
-export default Links
+export default LinksHoreca

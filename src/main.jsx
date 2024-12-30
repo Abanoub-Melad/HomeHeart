@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -12,16 +12,11 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <BrowserRouter> */}
-      {/* <Routes> */}
-        {/* <Route path="/" element={<Provider store={store}> <App /> </Provider>} /> */}
         <Router>
-        <Provider store={store}> <App /> </Provider>
-        {/* <App />  */}
+        <Provider store={store}> 
+          <App /> 
+          </Provider>
         </Router>
-        {/* <Route  path="/Register"   element={<Register/>}/> */}
-        {/* <Route  path="/Login"   element={<Login/>}/> */}
-      {/* </Routes> */}
-    {/* </BrowserRouter> */}
+
   </React.StrictMode>
 )

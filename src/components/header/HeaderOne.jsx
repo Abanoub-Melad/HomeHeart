@@ -330,6 +330,8 @@
 // //     <DarkModeOutlined sx={{ fontSize: "16px", color: "#fff" }} />
 // //   </IconButton>
 // // )}
+import { alpha, styled } from '@mui/material/styles';
+
 import { useContext, useState } from "react";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { DarkModeOutlined, ExpandMore, LightModeOutlined } from "@mui/icons-material";
@@ -443,10 +445,13 @@ function HeaderOne() {
                   localStorage.setItem(
                     "mode",
                     theme.palette.mode === "dark" ? "light" : "dark"
+                    // theme.palette.mode === "dark" ? "headeraaaaa" : "headeraaaaa"
+                    // backgroundColor: alpha(theme.palette.common.white, 0.15)
+
                   );
                   colorMode.toggleColorMode();
                 }}
-                color="#fff"
+                // color="#fff"
               >
                 <LightModeOutlined sx={{ fontSize: "16px",  }} />
               </IconButton>
@@ -459,6 +464,7 @@ function HeaderOne() {
                   );
                   colorMode.toggleColorMode();
                 }}
+                
                 // color="inherit"
                 // color="#fff"
 

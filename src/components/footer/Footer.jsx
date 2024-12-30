@@ -6,8 +6,9 @@ function Footer() {
         <>
             <Box
                 sx={{
-                    ".css-196h37h": { bgColor: "#000" },
-                    background: "#000",
+                    // ".css-196h37h": { bgColor: "#283445" },
+                        background: '#283445',
+                    background: ' rgba(40, 52, 69)'  ,
                 }}
             >
                 {/* <Box
@@ -17,9 +18,10 @@ function Footer() {
                 }}
             > */}
                 <Grid container
-                    p={3}
-                    display='flex' alignItems='flex-start'
-                    justifyContent='space-between' alignItems='center'>
+                    sx={{ p: 3, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+
+               
+                   >
                     <Grid item xs={12} sm={6} lg={3}
                     
                         sx={{ display: 'flex',  flexDirection: 'column', gap: 2, p: 1 }}

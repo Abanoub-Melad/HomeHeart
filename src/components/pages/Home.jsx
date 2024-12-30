@@ -1,7 +1,5 @@
-import React from 'react'
 import { Typography } from '@mui/material'
-import { Box } from '@mui/system'
-import { Stack } from "@mui/material";
+import { Box, useMediaQuery } from '@mui/system'
 import { Pagination, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,12 +12,15 @@ import 'swiper/css/pagination';
 // import { useTheme } from "@emotion/react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from '@emotion/react';
+
 import { Link } from 'react-router-dom';
 // import { motion } from "framer-motion";
 
 function Home() {
     const [t] = useTranslation()
-    const theme = useTheme()
+        const theme = useTheme()
+        const isMobile = useMediaQuery('(max-width:600px)');
+
 
     const mySwiper = [{
         Text: t(`Glassware
@@ -29,10 +30,10 @@ function Home() {
         Text: t(`Cast lron
   `), PathPhoto: "/images/home/pizza.jpg"
     },
-    {
-        Text: t(`PolyCarbonate
-  `), PathPhoto: "/images/home/Felli_Home-and-Heart_15-2.jpg"
-    },
+    //     {
+    //         Text: t(`PolyCarbonate
+    //   `), PathPhoto: "/images/home/Felli_Home-and-Heart_15-2.jpg"
+    //     },
     {
         Text: t(`Chinaware
   `), PathPhoto: "/images/home/Kulsan_Home-and-Heart_catering-900x600.jpg"
@@ -71,7 +72,8 @@ function Home() {
                                     position: "relative",
                                     display: "flex",
                                     width: "100%",
-                                    height: "514px",
+                                    height: "100vh",
+                                    // height: "514px",
 
                                 }}
                             >
@@ -92,6 +94,7 @@ function Home() {
 
                                 <Box
                                     sx={{
+
                                         position: "absolute",
                                         zIndex: 2,
                                         [theme.breakpoints.up("sm")]: {
@@ -102,13 +105,20 @@ function Home() {
                                         },
                                         [theme.breakpoints.down("sm")]: {
                                             py: 5,
+                                            left: 20,
+                                            bottom: 50,
                                         },
                                     }}
                                 >
 
-                                    <Typography variant={"h2"} fontSize={"84px"} fontWeight={'bold'}
+                                    <Typography
+                                        fontSize={isMobile ? '33px' : '99px'}
+                                        variant={"h2"}
+                                        // fontSize={"84px"} 
+                                        fontWeight={'bold'}
                                         color={'#fff'}
-                                        fontFamily={'c'}>
+                                        fontFamily={'c'}
+                                    >
                                         {one.Text}
                                     </Typography>
 
@@ -117,9 +127,9 @@ function Home() {
                         )
                     })}
                 </Swiper>
-            </Box>
+            </Box >
             {/* <Stack> */}
-            <Box
+            <Box Box
                 sx={{
                     py: 1,
                     position: "relative",
@@ -132,7 +142,8 @@ function Home() {
                     // py:5,
 
 
-                }}
+                }
+                }
             >
 
                 <Box
@@ -156,6 +167,8 @@ function Home() {
 
                 <Box
                     sx={{
+                        padding: isMobile ? '16px' : '32px', // تعديل البادينج بناءً على عرض الشاشة
+
                         position: "absolute",
                         zIndex: 2,
                         [theme.breakpoints.up("sm")]: {
@@ -169,7 +182,39 @@ function Home() {
                         },
                     }}
                 >
+                    <Typography
+                        variant="h3"
+                        fontSize={isMobile ? '28px' : '44px'}
+                        fontWeight="bold"
+                        color={theme.palette.mode === "dark" ? '#fff' : "#000"}
+                        fontFamily="c"
+                    >
+                        Customer First, Service Foremost.
+                    </Typography>
 
+                    <Typography
+                        variant="body1"
+                        fontSize={isMobile ? '16px' : '22px'}
+                        color={theme.palette.mode === "dark" ? '#fff' : "#000"}
+                        fontFamily="c"
+                        mt={2} // Add some margin-top for spacing
+                    >
+                        At Home & Heart, we seek perfection every day. We choose the brands we distribute on basis of excellent quality, good reputability, and reasonable prices too.
+                    </Typography>
+
+                    <Typography
+                        mt={5}
+                        variant="body1"
+                        fontSize={isMobile ? '20px' : '33px'}
+                        fontWeight="bold"
+                        color={theme.palette.mode === "dark" ? '#fff' : "#000"}
+                        fontFamily="c"
+                    >
+                        <Link href="#">
+                            Browse Collection
+                        </Link>
+                    </Typography>
+                    {/* 
                     <Typography variant={"h3"} fontSize={"44"} fontWeight={'bold'}
                         color={`${theme.palette.mode === "dark" ? '#fff' : "#000"}`}
                         fontFamily={'c'}>
@@ -186,10 +231,10 @@ function Home() {
                         <Link >
                         Browse Collection
                         </Link>
-                    </Typography>
+                    </Typography> */}
 
                 </Box>
-            </Box>
+            </Box >
             {/* </Stack> */}
 
         </>
