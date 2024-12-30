@@ -67,7 +67,8 @@ function Silverware() {
             <Grid container spacing={2} sx={{ padding: { md: '25px', xs: '20px' } }}>
             <Grid item xs={12} sm={6} md={8}>
                     <Card className="card" component={Link} to="/3d-glassware" sx={{ textDecoration: 'none', position: 'relative' }}>
-                        <CardMedia height={'300px'} component="img" image="..//..//../public/images/Horeca/Silverware & Buffet stations/La_Tavola.jpg" alt="3D Glassware" />
+                        <CardMedia height={'300px'} component="img" image="./../../../public/images/Horeca/Silverware & Buffet stations/La_Tavola.jpg" alt="3D Glassware" />
+                        {/* <CardMedia height={'300px'} component="img" image="..//..//../public/images/Horeca/Silverware & Buffet stations/La_Tavola.jpg" alt="3D Glassware" /> */}
                         <Box className="card-box">
                             <Typography variant="body2">Glassware</Typography>
                             <Typography variant="h6">3D Glassware</Typography>
