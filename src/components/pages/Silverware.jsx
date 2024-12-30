@@ -4,6 +4,7 @@ import { Grid, Card, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {  motion } from "framer-motion";
 import imgeSilv from "..//..//../public/images/home/Felli_Home-and-Heart_15-2.jpg";
+import imgeFelli from "../../../public/images/Horeca/Silverware & Buffet stations/La_Tavola.jpg";
 function Silverware() {
     const theme = useTheme()
     const isMobile = useMediaQuery('(max-width:600px)')  
@@ -67,7 +68,7 @@ function Silverware() {
             <Grid container spacing={2} sx={{ padding: { md: '25px', xs: '20px' } }}>
             <Grid item xs={12} sm={6} md={8}>
                     <Card className="card" component={Link} to="/3d-glassware" sx={{ textDecoration: 'none', position: 'relative' }}>
-                        <CardMedia height={'300px'} component="img" image="../../../public/images/Horeca/Silverware & Buffet stations/La_Tavola.jpg" alt="3D Glassware" />
+                        <CardMedia height={'300px'} component="img" image={`${imgeFelli}`} alt="3D Glassware" />
                         {/* <CardMedia height={'300px'} component="img" image="..//..//../public/images/Horeca/Silverware & Buffet stations/La_Tavola.jpg" alt="3D Glassware" /> */}
                         <Box className="card-box">
                             <Typography variant="body2">Glassware</Typography>
