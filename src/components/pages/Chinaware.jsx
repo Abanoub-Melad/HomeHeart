@@ -4,6 +4,10 @@ import { Grid, Card, CardMedia } from '@mui/material';
 import { Link } from 'react-router-dom';
 import {  motion } from "framer-motion";
 import  imgeChina from "./../../../public/images/home/Kulsan_Home-and-Heart_catering-900x600.jpg";
+import  imgeChur from '../../../public/images/Horeca/Chinaware/Churcill-1-1.jpg'
+import  imgeLogo from "../../../public/images/Horeca/Chinaware/logo-1.png"
+import  imgeMinh from "../../../public/images/Horeca/Chinaware/Minhlong-1.jpg"
+import  imgeNanawa from "../../../public/images/Horeca/Chinaware/Nanawa-1-2.jpg"
 
 function Chinaware() {
     const theme = useTheme()
@@ -70,7 +74,7 @@ function Chinaware() {
             <Grid item xs={12} sm={6} md={8}>
                 <Card className="card" component={Link} to="/bormioli-products"
                     sx={{ textDecoration: 'none', position: 'relative', }}>
-                    <CardMedia height={'260px'}  component="img" image='../../../public\images\Horeca\Chinaware\Churcill-1-1.jpg' alt="Bormioli Products" />
+                    <CardMedia height={'260px'}  component="img" image={`${imgeChur}`} alt="Bormioli Products" />
                     <Box className="card-box"
 
                     >
@@ -84,7 +88,7 @@ function Chinaware() {
 
             <Grid item xs={12} sm={6} md={4}>
                 <Card className="card" component={Link} to="/myglassstudio" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="../../../public\images\Horeca\Chinaware\logo-1.png" alt="MyGlassStudio" />
+                    <CardMedia height={'300px'} component="img" image={`${imgeLogo}`} alt="MyGlassStudio" />
                     <Box className="card-box">
                         <Typography variant="body2">Glassware</Typography>
                         <Typography variant="h6">MyGlassStudio</Typography>
@@ -94,7 +98,7 @@ function Chinaware() {
 
             <Grid item xs={12} sm={6} md={4}>
                 <Card className="card" component={Link} to="/3d-glassware" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="../../../public\images\Horeca\Chinaware\Minhlong-1.jpg" alt="3D Glassware" />
+                    <CardMedia height={'300px'} component="img" image={`${imgeMinh}`} alt="3D Glassware" />
                     <Box className="card-box">
                         <Typography variant="body2">Glassware</Typography>
                         <Typography variant="h6">3D Glassware</Typography>
@@ -104,7 +108,7 @@ function Chinaware() {
 
             <Grid item xs={12} sm={6} md={4}>
                 <Card className="card" component={Link} to="/riedel" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="../../../public\images\Horeca\Chinaware\Nanawa-1-2.jpg" alt="Riedel" />
+                    <CardMedia height={'300px'} component="img" image={`${imgeNanawa}`} alt="Riedel" />
                     <Box className="card-box" >
                         <Typography variant="body2">Glassware</Typography>
                         <Typography variant="h6">Riedel</Typography>
