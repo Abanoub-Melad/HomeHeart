@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import {  motion } from "framer-motion";
 import   imagePizza  from "..//../../public/images/home/pizza.jpg";
 import   imageCast  from "../../../public/images/Horeca/Cast Iron Comps/lava_new_product_1c.jpg";
-// import   imageCast  from "./../../../public/images/Horeca/Cast Iron Comps/lava_new_product_1c.jpg";
 
 function CastIronOven() {
     const theme = useTheme()

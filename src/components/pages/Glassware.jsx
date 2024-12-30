@@ -70,7 +70,7 @@ function Glassware() {
                     <Grid item xs={12} sm={6} md={8}>
                         <Card className="card" component={Link} to="/bormioli-products"
                             sx={{ textDecoration: 'none', position: 'relative', }}>
-                            <CardMedia height={'260px'} component="img" image='..//..//../public/images\Glassware\bormioli.jpeg' alt="Bormioli Products" />
+                            <CardMedia height={'260px'} component="img" image='../../../public/images\Glassware\bormioli.jpeg' alt="Bormioli Products" />
                             <Box className="card-box"
 
                             >
@@ -82,7 +82,7 @@ function Glassware() {
 
                     <Grid item xs={12} sm={6} md={4}>
                         <Card className="card" component={Link} to="/durobor" sx={{ textDecoration: 'none', position: 'relative' }}>
-                            <CardMedia height={'260px'} component="img" image='..//..//../public/images/Glassware/logo-2.jpeg' alt="Durobor" />
+                            <CardMedia height={'260px'} component="img" image='../../../public/images/Glassware/logo-2.jpeg' alt="Durobor" />
                             {/* <CardMedia height={'260px'} component="img" image='/images/Glassware/logo-2.jpeg' alt="Durobor" /> */}
                             <Box className="card-box">
                                 <Typography variant="body2">Glassware</Typography>
@@ -93,7 +93,7 @@ function Glassware() {
 
                     <Grid item xs={12} sm={6} md={4}>
                         <Card className="card" component={Link} to="/myglassstudio" sx={{ textDecoration: 'none', position: 'relative' }}>
-                            <CardMedia height={'300px'} component="img" image="..//..//../public/images/Glassware/My-Glass-1-1.jpg" alt="MyGlassStudio" />
+                            <CardMedia height={'300px'} component="img" image="../../../public/images/Glassware/My-Glass-1-1.jpg" alt="MyGlassStudio" />
                             <Box className="card-box">
                                 <Typography variant="body2">Glassware</Typography>
                                 <Typography variant="h6">MyGlassStudio</Typography>
@@ -103,7 +103,7 @@ function Glassware() {
 
                     <Grid item xs={12} sm={6} md={4}>
                         <Card className="card" component={Link} to="/3d-glassware" sx={{ textDecoration: 'none', position: 'relative' }}>
-                            <CardMedia height={'300px'} component="img" image="public\images\Glassware\3828-low.jpg" alt="3D Glassware" />
+                            <CardMedia height={'300px'} component="img" image="../../../public\images\Glassware\3828-low.jpg" alt="3D Glassware" />
                             <Box className="card-box">
                                 <Typography variant="body2">Glassware</Typography>
                                 <Typography variant="h6">3D Glassware</Typography>
@@ -113,7 +113,7 @@ function Glassware() {
 
                     <Grid item xs={12} sm={6} md={4}>
                         <Card className="card" component={Link} to="/riedel" sx={{ textDecoration: 'none', position: 'relative' }}>
-                            <CardMedia height={'300px'} component="img" image="..//..//../public/images/Glassware/Riedel-1.jpg" alt="Riedel" />
+                            <CardMedia height={'300px'} component="img" image="../../../public/images/Glassware/Riedel-1.jpg" alt="Riedel" />
                             {/* <CardMedia height={'300px'} component="img" image="public\images\Glassware\Riedel-1.jpg" alt="Riedel" /> */}
                             <Box className="card-box" >
                                 <Typography variant="body2">Glassware</Typography>

@@ -70,7 +70,7 @@ function Chinaware() {
             <Grid item xs={12} sm={6} md={8}>
                 <Card className="card" component={Link} to="/bormioli-products"
                     sx={{ textDecoration: 'none', position: 'relative', }}>
-                    <CardMedia height={'260px'}  component="img" image='/public\images\Horeca\Chinaware\Churcill-1-1.jpg' alt="Bormioli Products" />
+                    <CardMedia height={'260px'}  component="img" image='../../../public\images\Horeca\Chinaware\Churcill-1-1.jpg' alt="Bormioli Products" />
                     <Box className="card-box"
 
                     >
@@ -84,7 +84,7 @@ function Chinaware() {
 
             <Grid item xs={12} sm={6} md={4}>
                 <Card className="card" component={Link} to="/myglassstudio" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="/public\images\Horeca\Chinaware\logo-1.png" alt="MyGlassStudio" />
+                    <CardMedia height={'300px'} component="img" image="../../../public\images\Horeca\Chinaware\logo-1.png" alt="MyGlassStudio" />
                     <Box className="card-box">
                         <Typography variant="body2">Glassware</Typography>
                         <Typography variant="h6">MyGlassStudio</Typography>
@@ -94,7 +94,7 @@ function Chinaware() {
 
             <Grid item xs={12} sm={6} md={4}>
                 <Card className="card" component={Link} to="/3d-glassware" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="\public\images\Horeca\Chinaware\Minhlong-1.jpg" alt="3D Glassware" />
+                    <CardMedia height={'300px'} component="img" image="../../../public\images\Horeca\Chinaware\Minhlong-1.jpg" alt="3D Glassware" />
                     <Box className="card-box">
                         <Typography variant="body2">Glassware</Typography>
                         <Typography variant="h6">3D Glassware</Typography>
@@ -104,7 +104,7 @@ function Chinaware() {
 
             <Grid item xs={12} sm={6} md={4}>
                 <Card className="card" component={Link} to="/riedel" sx={{ textDecoration: 'none', position: 'relative' }}>
-                    <CardMedia height={'300px'} component="img" image="\public\images\Horeca\Chinaware\Nanawa-1-2.jpg" alt="Riedel" />
+                    <CardMedia height={'300px'} component="img" image="../../../public\images\Horeca\Chinaware\Nanawa-1-2.jpg" alt="Riedel" />
                     <Box className="card-box" >
                         <Typography variant="body2">Glassware</Typography>
                         <Typography variant="h6">Riedel</Typography>
